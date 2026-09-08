@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hayashi´s Odonto | Cuidando do seu sorriso</title>
+
+    <meta name="description" content="Hayashi´s Odonto - Cuidado odontológico com qualidade, segurança e atendimento personalizado.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #18352b;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        :root {
+            --verde: #087f5b;
+            --verde-escuro: #056044;
+            --verde-claro: #e9f8f2;
+            --verde-muito-claro: #f5fcf9;
+            --texto: #18352b;
+            --cinza: #64756f;
+            --branco: #ffffff;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #e8efec;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            height: 76px;
+            padding: 0 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: var(--verde);
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--texto);
+            font-weight: 500;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .menu a {
+            color: #315048;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            color: var(--verde);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 10px;
+            padding: 13px 22px;
+            font-size: 14px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .btn-verde {
+            color: white !important;
+            background: var(--verde);
+            box-shadow: 0 8px 20px rgba(8, 127, 91, 0.18);
+        }
+
+        .btn-verde:hover {
+            background: var(--verde-escuro);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(8, 127, 91, 0.25);
+        }
+
+        .mobile-menu {
+            display: none;
+            width: 26px;
+            height: 18px;
+            position: relative;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .mobile-menu span {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--verde);
+            border-radius: 2px;
+        }
+
+        .mobile-menu span:nth-child(1) { top: 0; }
+        .mobile-menu span:nth-child(2) { top: 8px; }
+        .mobile-menu span:nth-child(3) { top: 16px; }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 720px;
+            padding: 145px 25px 80px;
+            background:
+                radial-gradient(circle at 85% 25%, rgba(8, 127, 91, 0.14), transparent 35%),
+                linear-gradient(135deg, #f6fcfa 0%, #ffffff 60%);
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .tag {
+            display: inline-flex;
+            padding: 8px 13px;
+            border-radius: 30px;
+            background: var(--verde-claro);
+            color: var(--verde-escuro);
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            max-width: 650px;
+            font-size: clamp(42px, 5vw, 70px);
+            line-height: 1.05;
+            letter-spacing: -3px;
+            color: #173b30;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--verde);
+        }
+
+        .hero p {
+            max-width: 570px;
+            color: var(--cinza);
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 13px;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline {
+            color: var(--verde);
+            border: 1px solid #b9ddd0;
+            background: white;
+        }
+
+        .btn-outline:hover {
+            background: var(--verde-claro);
+            transform: translateY(-2px);
+        }
+
+        .hero-card {
+            min-height: 470px;
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            padding: 35px;
+            box-shadow: 0 25px 60px rgba(7, 76, 57, 0.18);
+            background-image:
+                linear-gradient(180deg, rgba(6, 61, 45, 0.15) 0%, rgba(4, 46, 34, 0.88) 100%),
+                url("https://images.unsplash.com/photo-1565793244233-3d09028aad47?auto=format&fit=crop&w=900&q=80");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-card-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+
+        .hero-card-content small {
+            opacity: 0.8;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .hero-card-content h2 {
+            font-size: 30px;
+            margin: 8px 0;
+        }
+
+        .hero-card-content p {
+            color: rgba(255,255,255,0.8);
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        section {
+            padding: 90px 25px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-header {
+            max-width: 680px;
+            margin-bottom: 50px;
+        }
+
+        .section-header small {
+            color: var(--verde);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .section-header h2 {
+            margin-top: 10px;
+            font-size: clamp(32px, 4vw, 48px);
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            color: var(--texto);
+        }
+
+        .section-header p {
+            margin-top: 15px;
+            color: var(--cinza);
+        }
+
+        /* =========================
+           SOBRE
+        ========================= */
+
+        .beneficios {
+            background: white;
+        }
+
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .sobre-foto {
+            border-radius: 24px;
+            overflow: hidden;
+            min-height: 420px;
+            background-image: url("https://images.unsplash.com/photo-1758687126864-96b61e1b3af0?auto=format&fit=crop&w=900&q=80");
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 25px 50px rgba(13, 73, 56, 0.12);
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+        }
+
+        .card {
+            padding: 26px;
+            border: 1px solid #e4eee9;
+            border-radius: 18px;
+            background: white;
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 40px rgba(13, 73, 56, 0.09);
+            border-color: #c8e5da;
+        }
+
+        .icon {
+            flex-shrink: 0;
+            width: 46px;
+            height: 46px;
+            border-radius: 13px;
+            background: var(--verde-claro);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--verde-escuro);
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin-bottom: 6px;
+        }
+
+        .card p {
+            color: var(--cinza);
+            font-size: 14px;
+        }
+
+        /* =========================
+           SERVIÇOS
+        ========================= */
+
+        .servicos {
+            background: var(--verde-muito-claro);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .service {
+            padding: 28px 22px;
+            background: white;
+            border-radius: 18px;
+            border: 1px solid #e1eee8;
+        }
+
+        .service h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: var(--verde-escuro);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .service p {
+            color: var(--cinza);
+            font-size: 13px;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            padding: 30px 25px 90px;
+        }
+
+        .cta-box {
+            max-width: 1200px;
+            margin: auto;
+            padding: 60px;
+            border-radius: 28px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            position: relative;
+            overflow: hidden;
+            background-image:
+                linear-gradient(120deg, rgba(5, 61, 45, 0.93) 0%, rgba(8, 127, 91, 0.88) 100%),
+                url("https://images.unsplash.com/photo-1565793244233-3d09028aad47?auto=format&fit=crop&w=1200&q=80");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .cta-box h2 {
+            font-size: 38px;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+
+        .cta-box p {
+            color: rgba(255,255,255,0.85);
+        }
+
+        .cta-box .btn {
+            background: white;
+            color: var(--verde);
+            flex-shrink: 0;
+        }
+
+        .cta-box .btn:hover {
+            transform: translateY(-2px);
+            background: #f3fffa;
+        }
+
+        /* =========================
+           FAQ
+        ========================= */
+
+        .faq-list {
+            max-width: 850px;
+        }
+
+        details {
+            border-bottom: 1px solid #dfeae5;
+            padding: 20px 0;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: 700;
+            color: var(--texto);
+        }
+
+        details p {
+            color: var(--cinza);
+            padding-top: 12px;
+            font-size: 14px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #10392e;
+            color: white;
+            padding: 55px 25px 25px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            padding-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+        .footer-logo span {
+            font-weight: 400;
+            opacity: 0.8;
+        }
+
+        .footer-description {
+            max-width: 400px;
+            margin-top: 12px;
+            color: rgba(255,255,255,0.65);
+            font-size: 14px;
+        }
+
+        .footer-contact h3 {
+            margin-bottom: 10px;
+        }
+
+        .footer-contact p {
+            color: rgba(255,255,255,0.65);
+            font-size: 14px;
+        }
+
+        .footer-bottom {
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+            font-size: 12px;
+        }
+
+        /* =========================
+           ANIMAÇÕES
+        ========================= */
+
+        .fade {
+            opacity: 0;
+            transform: translateY(25px);
+            animation: aparecer 0.8s ease forwards;
+        }
+
+        @keyframes aparecer {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* =========================
+           RESPONSIVO
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .menu {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 125px;
+            }
+
+            .hero-card {
+                min-height: 350px;
+            }
+
+            .sobre-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sobre-foto {
+                min-height: 260px;
+                order: -1;
+            }
+
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta-box {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 40px 30px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .navbar {
+                height: 68px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .hero {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+
+            section {
+                padding: 65px 18px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+                letter-spacing: -2px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .hero-card {
+                min-height: 300px;
+                padding: 25px;
+                border-radius: 22px;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+
+            .cta-box h2 {
+                font-size: 30px;
+            }
+
+            .footer-top {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+
+        <a href="#" class="logo">
+            Hayashi´s <span>Odonto</span>
+        </a>
+
+        <div class="menu">
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#duvidas">Dúvidas</a>
+
+            <a class="btn btn-verde"
+               href="https://wa.me/554198853867?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Hayashi´s%20Odonto."
+               target="_blank">
+                Agendar consulta
+            </a>
+        </div>
+
+        <button class="mobile-menu" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </nav>
+</header>
+
+
+<main>
+
+    <!-- HERO -->
+
+    <section class="hero" id="inicio">
+
+        <div class="hero-container">
+
+            <div class="fade">
+
+                <span class="tag">
+                    Cuidado que transforma sorrisos
+                </span>
+
+                <h1>
+                    Seu sorriso merece
+                    <span>cuidado de verdade.</span>
+                </h1>
+
+                <p>
+                    Na Hayashi´s Odonto você encontra atendimento
+                    odontológico humanizado, moderno e pensado para
+                    cuidar do seu sorriso em todas as fases.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a class="btn btn-verde"
+                       href="https://wa.me/554198853867?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Hayashi´s%20Odonto."
+                       target="_blank">
+                        Agendar minha consulta
+                    </a>
+
+                    <a class="btn btn-outline"
+                       href="#servicos">
+                        Conhecer serviços
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-card fade">
+
+                <div class="hero-card-content">
+
+                    <small>HAYASHI´S ODONTO</small>
+
+                    <h2>
+                        Cuidar do sorriso
+                        é cuidar de você.
+                    </h2>
+
+                    <p>
+                        Atendimento personalizado,
+                        conforto e qualidade em cada consulta.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SOBRE -->
+
+    <section class="beneficios" id="sobre">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <small>Por que Hayashi´s Odonto?</small>
+
+                <h2>
+                    Uma experiência odontológica
+                    mais leve e humana.
+                </h2>
+
+                <p>
+                    Nosso objetivo é tornar o cuidado com a saúde
+                    bucal simples, confortável e acessível.
+                </p>
+
+            </div>
+
+
+            <div class="sobre-grid">
+
+                <div class="sobre-foto" role="img" aria-label="Família sorrindo"></div>
+
+                <div class="cards">
+
+                    <div class="card">
+
+                        <div class="icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                        </div>
+
+                        <div>
+                            <h3>Atendimento humanizado</h3>
+                            <p>Cada paciente é tratado de forma individual, com atenção às suas necessidades e objetivos.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        </div>
+
+                        <div>
+                            <h3>Qualidade e cuidado</h3>
+                            <p>Um ambiente pensado para proporcionar segurança, conforto e tranquilidade.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+                        </div>
+
+                        <div>
+                            <h3>Você em primeiro lugar</h3>
+                            <p>Trabalhamos para que cada visita ao dentista seja uma experiência positiva.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVIÇOS -->
+
+    <section class="servicos" id="servicos">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <small>Especialidades</small>
+
+                <h2>
+                    Cuidados para todas
+                    as fases do seu sorriso.
+                </h2>
+
+                <p>
+                    Entre em contato e descubra qual atendimento
+                    é ideal para você.
+                </p>
+
+            </div>
+
+
+            <div class="service-grid">
+
+                <div class="service">
+                    <h3>Limpeza</h3>
+                    <p>
+                        Cuidados preventivos para manter
+                        sua saúde bucal em dia.
+                    </p>
+                </div>
+
+                <div class="service">
+                    <h3>Clareamento</h3>
+                    <p>
+                        Procedimentos para melhorar a aparência
+                        e o brilho do sorriso.
+                    </p>
+                </div>
+
+                <div class="service">
+                    <h3>Estética dental</h3>
+                    <p>
+                        Soluções para deixar seu sorriso
+                        ainda mais harmônico.
+                    </p>
+                </div>
+
+                <div class="service">
+                    <h3>Avaliação</h3>
+                    <p>
+                        Avaliação odontológica para entender
+                        suas necessidades.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <div class="cta">
+
+        <div class="cta-box">
+
+            <div>
+
+                <h2>
+                    Pronto para cuidar
+                    do seu sorriso?
+                </h2>
+
+                <p>
+                    Fale conosco pelo WhatsApp e agende
+                    sua consulta.
+                </p>
+
+            </div>
+
+            <a class="btn"
+               href="https://wa.me/554198853867?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Hayashi´s%20Odonto."
+               target="_blank">
+                Falar pelo WhatsApp
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- FAQ -->
+
+    <section id="duvidas">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <small>Dúvidas frequentes</small>
+
+                <h2>
+                    Antes de agendar,
+                    talvez você queira saber...
+                </h2>
+
+            </div>
+
+
+            <div class="faq-list">
+
+                <details>
+                    <summary>
+                        Como faço para agendar uma consulta?
+                    </summary>
+
+                    <p>
+                        Basta clicar em qualquer botão de agendamento
+                        do site. Você será direcionado para o WhatsApp
+                        da Hayashi´s Odonto.
+                    </p>
+                </details>
+
+
+                <details>
+                    <summary>
+                        Posso tirar dúvidas pelo WhatsApp?
+                    </summary>
+
+                    <p>
+                        Sim. Entre em contato pelo WhatsApp para
+                        conversar com a equipe e verificar as
+                        informações necessárias para seu atendimento.
+                    </p>
+                </details>
+
+
+                <details>
+                    <summary>
+                        Como saber qual atendimento preciso?
+                    </summary>
+
+                    <p>
+                        A avaliação odontológica é o melhor caminho
+                        para entender suas necessidades e definir
+                        o atendimento adequado.
+                    </p>
+                </details>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-top">
+
+            <div>
+
+                <div class="footer-logo">
+                    Hayashi´s <span>Odonto</span>
+                </div>
+
+                <p class="footer-description">
+                    Cuidando do seu sorriso com atenção,
+                    qualidade e atendimento humanizado.
+                </p>
+
+            </div>
+
+
+            <div class="footer-contact">
+
+                <h3>Agende sua consulta</h3>
+
+                <p>
+                    Atendimento pelo WhatsApp
+                </p>
+
+                <br>
+
+                <a class="btn btn-verde"
+                   href="https://wa.me/554198853867?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Hayashi´s%20Odonto."
+                   target="_blank">
+                    WhatsApp
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            © 2026 Hayashi´s Odonto. Todos os direitos reservados.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+    /*
+       WhatsApp centralizado
+
+       Se quiser trocar o número ou a mensagem depois,
+       altere somente estas duas linhas.
+    */
+
+    const whatsapp =
+        "https://wa.me/554198853867?text=" +
+        encodeURIComponent(
+            "Olá! Gostaria de agendar uma consulta na Hayashi´s Odonto."
+        );
+
+
+    /*
+       Faz todos os botões que possuem
+       data-whatsapp abrirem o WhatsApp.
+    */
+
+    document.querySelectorAll("[data-whatsapp]")
+        .forEach(botao => {
+
+            botao.addEventListener("click", () => {
+                window.open(whatsapp, "_blank");
+            });
+
+        });
+
+
+    /*
+       Menu mobile
+    */
+
+    const mobileMenu =
+        document.querySelector(".mobile-menu");
+
+    const menu =
+        document.querySelector(".menu");
+
+    mobileMenu.addEventListener("click", () => {
+
+        if (menu.style.display === "flex") {
+
+            menu.style.display = "none";
+
+        } else {
+
+            menu.style.display = "flex";
+            menu.style.position = "absolute";
+            menu.style.top = "68px";
+            menu.style.left = "0";
+            menu.style.right = "0";
+            menu.style.background = "white";
+            menu.style.padding = "20px";
+            menu.style.flexDirection = "column";
+            menu.style.alignItems = "stretch";
+            menu.style.boxShadow =
+                "0 15px 30px rgba(0,0,0,0.08)";
+
+        }
+
+    });
+
+</script>
+
+</body>
+</html>
